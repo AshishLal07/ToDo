@@ -2,7 +2,38 @@
     <head>
         <title> <%= title%></title>
     </head>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <body>
-        <h1> Major project</h1>
+        <h1><%= title%> </h1>
+        <div id="ToDo-container">
+            <div id = "contactFill">
+                <form action="/new-task" method="post">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="Description" placeholder="What do you need to do?">
+                    <label for="purpose">Purpose</label>
+                    <select id = "purpose" name="Purpose">
+                        <option>Personal</option>
+                        <option>School</option>
+                        <option>Work</option>
+                        <option>Cleaning</option>
+                        <option>Others</option>
+                    </select>
+                    <label for="datepicker"> Date</label>
+                    <input type="date" id="datepicker"  name="Date">
+                </form>
+            </div>
+            <div id="Submit">
+                <button id="addTask">Add Task</button>
+                <button id="Delete">Delete Task</button>
+            </div>
+
+          
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
+        <script src="/js/home.js"></script>
+
     </body>
 </html>
