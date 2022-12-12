@@ -2,35 +2,73 @@
     <head>
         <title> <%= title%></title>
     </head>
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <body>
-        <h1><%= title%> </h1>
+        
         <div id="ToDo-container">
+            <div id="ToDo-form">
+            <h1><%= title%> </h1>
             <div id = "contactFill">
                 <form action="/new-task" method="post">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="Description" placeholder="What do you need to do?">
-                    <label for="purpose">Purpose</label>
-                    <select id = "purpose" name="Purpose">
-                        <option>Personal</option>
-                        <option>School</option>
-                        <option>Work</option>
-                        <option>Cleaning</option>
-                        <option>Others</option>
+                    <div id="desc-box">
+                         <label for="description">Description</label>
+                        <input type="text" id="description" required name="Description" placeholder="What do you need to do?" > 
+                    </div>
+                   
+                   <div id="catg-box">
+                    <label for="purpose">Category</label>
+                    <select id = "purpose" name="Purpose" required>
+                        <option disabled selected value> -- Choose a category -- </option>
+                        <option data-color="blue">Personal</option>
+                        <option data-color="purple">School</option>
+                        <option data-color="peach">Work</option>
+                        <option data-color="brown">Cleaning</option>
+                        <option data-color="skyblue">Others</option>
                     </select>
+                   </div>
+                   <div id="date-box">
                     <label for="datepicker"> Date</label>
-                    <input type="date" id="datepicker"  name="Date">
+                    <input type="date"  id="datepicker" name="Date">
+                   </div>
+                   
+                   <div class="btn">                   
+                    <button type=submit id="addTask"><span class="plus">+</span>ADD TASK</button>
+                    <!-- <button id="Delete">Delete Task</button> -->
+                    <a id="delete" href=""><i class="fa-solid fa-trash-can"></i> DELETE TASK</a>
+                </div>
+                   
                 </form>
             </div>
-            <div id="Submit">
-                <button id="addTask">Add Task</button>
-                <button id="Delete">Delete Task</button>
-            </div>
+           
+           
+           
+           
 
           
         </div>
-
+        <div id="taskShowcase">
+            <ul>
+                <% for(let i of task_List){ %>
+                    <!-- <%= i %> -->
+                  <li>
+                    <div class="task">
+                        <input type="checkbox" class="check" id=<%=i.id %>  >
+                        <label for=<%=i.id %>> <%= i.task %></label>
+                        <div id="purpose"> <%=i.Purpose %></div>
+                    </div>
+                    
+                    
+                   <div class="date">
+                        <i class="fa-solid fa-calendar-plus"> <%= (""+i.Date).substring(4,15)%></i>
+                   </div>
+                  </li>  
+                  <% } %>
+            </ul>
+        </div>
+    </div>
 
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
         <script src="/js/home.js"></script>

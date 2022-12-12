@@ -1,4 +1,155 @@
 body{
     margin: 0;
     background-color: grey;
+    color: grey;
+    font-family: sans-serif;
+}
+/* to do contaier */
+.check-line{
+    text-decoration: line-through;
+}
+
+#ToDo-container{
+    margin: 10px auto;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    overflow: scroll;
+    
+}
+#ToDo-form h1{
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+#ToDo-form > #contactFill{
+    margin: 0;
+}
+#desc-box,#catg-box,#date-box{
+    padding-top: 5px;
+    height: 3.8rem;
+    padding-left:10px ;
+    border-bottom: 1px solid lightgrey;
+}
+#catg-box{
+    display: inline-block;
+    border-right: 1px solid lightgrey;
+    width: 48%;
+    
+}
+
+#date-box{
+    display: inline-block;
+    width: 48%;
+    
+    padding-left: 0;
+}
+#desc-box >label,#catg-box >label, #date-box > label{
+    display: block;
+    margin-bottom: 5px;
+}
+form{
+    margin: 0;
+}
+form > label{
+    display: block;
+}
+form input,select{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: grey;
+}
+input:focus,select:focus{
+    background-color: azure;
+    
+}
+#desc-box:focus-within,#catg-box:focus-within,#date-box:focus-within{
+    background-color: azure;
+}
+
+/* styling btns of app */
+.btn{
+    text-align: center;
+    margin: 30px;
+}
+.btn a{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+.btn > button, .btn  a{
+    height: 3rem;
+    width: 9.2rem;
+}
+button{
+    padding-left:1rem ;
+    position: relative;
+    font-size: 1rem;
+    background-color:#333;
+    color: white;
+    border: none;
+}
+.plus{
+    color: white;
+    position: absolute;
+    top:12%;
+    left: 7%;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+#delete{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+}
+#delete:focus{
+    color: white;
+}
+
+/* task showcase box style */
+#taskShowcase{
+    margin: 10px;
+}
+#taskShowcase ul{
+    padding-left: 10px;
+    
+}
+
+#taskShowcase li{
+    position: relative;
+    list-style: none;
+    height: 65px;
+    border-top:1px solid lightgrey ;
+    border-bottom:1px solid lightgrey ;
+}
+
+#taskShowcase #purpose{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding-top: 8px ;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    height: 2rem;
+    width: 6rem;
+}
+.task{
+    margin-top: 10px;
+}
+.task label {
+    padding-left: 20px;
+    font-size: 1.2rem;
+    
+}
+.date{
+    padding-top:5px ;
+    padding-left: 47px;
+    font-size: .7rem;
+    color: rgb(167, 166, 166);
 }

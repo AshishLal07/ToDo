@@ -6,10 +6,12 @@ const taskSchema = new mongoose.Schema({
         require:true
     },
     Date:{
-        type:Date
+        type:Date,
+        require:true
     },
     Purpose:{
-        type:String
+        type:String,
+        require:true
     }
 })
 
